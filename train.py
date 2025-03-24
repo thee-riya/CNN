@@ -39,6 +39,8 @@ print(f"Test set size: {len(test_data)}")
 
 # Load a pretrained AlexNet model and modify for CIFAR-10
 model = models.alexnet(pretrained=True)
+# model = models.vgg16(pretrained=True)
+# model = models.resnet18(pretrained=True)
 model.classifier[6] = nn.Linear(4096, 10)  # Adjust for 10 classes
 
 # Move the model to GPU if available
